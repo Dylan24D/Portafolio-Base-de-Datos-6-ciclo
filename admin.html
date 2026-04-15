@@ -2,43 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Administrativo - Gestión</title>
+    <title>Admin Dashboard | Gestión Cloud</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #f4f7f6;">
-    <nav class="navbar" style="background-color: #1a252f;">
-        <div class="logo">Panel de Administrador</div>
-        <button onclick="window.location.href='index.html'" class="btn-auth" style="background:#e74c3c">Cerrar Sesión</button>
+<body class="admin-view">
+    <nav class="navbar admin-navbar">
+        <div class="logo">ADMIN<span>PANEL</span></div>
+        <button onclick="window.location.href='index.html'" class="btn-logout">Cerrar Sesión</button>
     </nav>
 
-    <header class="hero" style="background: white; border-bottom: 1px solid #eee;">
-        <h1>Gestión de Portafolio</h1>
-        <p>Configuración de imágenes y archivos para las 16 semanas.</p>
-    </header>
+    <div class="container">
+        <div class="admin-hero">
+            <h2>Mantenimiento de Contenidos</h2>
+            <p>Sube imágenes, modifica descripciones o elimina registros de la nube.</p>
+        </div>
 
-    <section class="container">
-        <div class="upload-box">
-            <h3>Subir Material Semanal</h3>
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; align-items: center;">
-                <select id="semana-select">
-                    <option value="">Elegir Semana...</option>
-                    <option value="1">Semana 1</option>
-                    <option value="2">Semana 2</option>
-                    <option value="3">Semana 3</option>
-                    <option value="4">Semana 4</option>
-                    <!-- Las demás se pueden agregar manualmente -->
-                </select>
-                <label>Imagen: <input type="file" accept="image/*"></label>
-                <label>Archivo: <input type="file"></label>
-                <button class="btn-auth" style="background: #27ae60;">Guardar Todo</button>
+        <div class="management-card">
+            <h3>Carga de Archivos Cloud</h3>
+            <div class="upload-grid">
+                <div class="input-group"><label>Semana</label><input type="number" min="1" max="16" placeholder="00"></div>
+                <div class="input-group"><label>Imagen</label><input type="file" accept="image/*"></div>
+                <div class="input-group"><label>PDF/Doc</label><input type="file"></div>
+                <button class="btn-save-cloud">Sincronizar Cloud</button>
             </div>
         </div>
 
-        <!-- Cuadrícula 4x4 con opciones de edición -->
         <div class="grid-proyectos" id="contenedor-editar"></div>
-    </section>
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

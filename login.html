@@ -2,16 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Iniciar Sesión - Portafolio</title>
+    <title>Acceso Admin | BD-II</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="display:flex; justify-content:center; align-items:center; height:100vh; background:#f0f2f5; margin:0;">
-    <div style="background:white; padding:40px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.1); width:320px; text-align:center;">
-        <h2 style="color:#2c3e50; margin-bottom:20px;">Acceso Admin</h2>
-        <input type="text" id="user" placeholder="Usuario" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px; box-sizing:border-box;">
-        <input type="password" id="pass" placeholder="Contraseña" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px; box-sizing:border-box;">
-        <button onclick="validarAcceso()" class="btn-auth" style="width:100%; margin-top:15px; padding:12px;">Entrar al Panel</button>
-        <p style="margin-top:20px;"><a href="index.html" style="text-decoration:none; color:#3498db; font-size:0.9rem;">← Volver al Inicio</a></p>
+<body class="login-page">
+    <div class="login-container">
+        <h2>Panel de Gestión</h2>
+        <p>Introduce credenciales para editar el portafolio</p>
+        <div class="login-form">
+            <input type="text" id="user" placeholder="Nombre de usuario">
+            <input type="password" id="pass" placeholder="Contraseña">
+            <button onclick="validarAcceso()" class="btn-primary-block">Acceder al Sistema</button>
+        </div>
+        <a href="index.html" class="link-back">Regresar al sitio principal</a>
     </div>
     <script src="script.js"></script>
 </body>

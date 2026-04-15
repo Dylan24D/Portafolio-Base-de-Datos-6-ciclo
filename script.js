@@ -1,6 +1,5 @@
 const CREDENCIALES = { user: "admin", pass: "123" };
 
-// Validación de Login
 function validarAcceso() {
     const userIn = document.getElementById('user').value;
     const passIn = document.getElementById('pass').value;
@@ -8,42 +7,39 @@ function validarAcceso() {
     if (userIn === CREDENCIALES.user && passIn === CREDENCIALES.pass) {
         window.location.href = "admin.html";
     } else {
-        alert("Usuario o contraseña incorrectos");
+        alert("Acceso inválido. Verifica tus datos.");
     }
 }
 
-// Función para generar las 16 semanas (4x4) con soporte de imagen
-function cargarSemanas() {
-    const contenedorUser = document.getElementById('contenedor-visualizar');
-    const contenedorAdmin = document.getElementById('contenedor-editar');
+function generarContenido() {
+    const contUser = document.getElementById('contenedor-visualizar');
+    const contAdmin = document.getElementById('contenedor-editar');
     
-    // Imagen de ejemplo (puedes cambiar esta URL por cualquier imagen de internet)
-    const imagenPlaceholder = "https://placeholder.com";
+    // Imágenes ilustrativas de tecnología
+    const imgTech = "https://unsplash.com";
 
     for (let i = 1; i <= 16; i++) {
-        // Estructura para el Usuario General
-        if (contenedorUser) {
-            contenedorUser.innerHTML += `
+        if (contUser) {
+            contUser.innerHTML += `
                 <div class="card">
-                    <img src="${imagenPlaceholder}+${i}" class="card-img" alt="Semana ${i}">
-                    <div class="card-body">
-                        <h3>Semana ${i}</h3>
-                        <button class="btn-view">Ver Detalles</button>
+                    <img src="${imgTech}" class="card-img">
+                    <div class="card-content">
+                        <h4>Semana ${i < 10 ? '0' + i : i}</h4>
+                        <p style="font-size: 0.8rem; color: #666;">Laboratorio Académico</p>
+                        <button style="background:var(--upla-blue); color:white; border:none; padding:10px; width:100%; border-radius:5px; cursor:pointer;">Explorar Archivo</button>
                     </div>
                 </div>`;
         }
 
-        // Estructura para el Administrador
-        if (contenedorAdmin) {
-            contenedorAdmin.innerHTML += `
+        if (contAdmin) {
+            contAdmin.innerHTML += `
                 <div class="card">
-                    <img src="${imagenPlaceholder}+${i}" class="card-img" alt="Semana ${i}">
-                    <div class="card-body">
-                        <h3>Semana ${i}</h3>
-                        <button class="btn-view" style="margin-bottom:10px;">Ver Actual</button>
-                        <div style="display:flex; gap:8px;">
-                            <button class="btn-edit">✏️ Editar</button>
-                            <button class="btn-delete">🗑️ Borrar</button>
+                    <img src="${imgTech}" class="card-img">
+                    <div class="card-content">
+                        <h4>Sesión ${i}</h4>
+                        <div style="display:flex; gap:5px; margin-top:10px;">
+                            <button style="flex:1; background:#fbbf24; border:none; padding:8px; border-radius:5px; cursor:pointer;">✏️</button>
+                            <button style="flex:1; background:#ef4444; color:white; border:none; padding:8px; border-radius:5px; cursor:pointer;">🗑️</button>
                         </div>
                     </div>
                 </div>`;
@@ -51,4 +47,4 @@ function cargarSemanas() {
     }
 }
 
-window.onload = cargarSemanas;
+window.onload = generarContenido;

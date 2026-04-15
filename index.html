@@ -3,36 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio Digital - Usuario</title>
+    <title>Portafolio Académico | Base de Datos II</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Portafolio Digital</div>
-        <div class="auth-controls">
-            <button onclick="window.location.href='login.html'" class="btn-auth">Ingresar como Admin</button>
-        </div>
+        <div class="logo">BD-II<span> PORTAFOLIO</span></div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#tecnologias">Tecnologías</a></li>
+            <li><a href="#proyectos">Semanas</a></li>
+        </ul>
+        <button onclick="window.location.href='login.html'" class="btn-nav-login">Iniciar Sesión</button>
     </nav>
 
-    <header class="hero">
-        <h1>Semanas de Clase</h1>
-        <p>Vista de Usuario General - Galería de Proyectos</p>
+    <header id="inicio" class="hero">
+        <div class="hero-overlay">
+            <h5>UNIVERSIDAD PERUANA LOS ANDES</h5>
+            <h1>DESARROLLO DE APLICACIONES</h1>
+            <p>Gestión avanzada de datos y arquitectura de software moderno.</p>
+            <div class="hero-btns">
+                <a href="#proyectos" class="btn-primary">Ver Semanas</a>
+                <a href="#tecnologias" class="btn-secondary">Tecnologías</a>
+            </div>
+        </div>
     </header>
 
-    <section id="habilidades">
-        <div class="skills-container">
-            <span class="skill-tag">SQL Server</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">Cloud Storage</span>
+    <section class="stats-bar">
+        <div class="stat-item"><h3>16</h3><p>Semanas</p></div>
+        <div class="stat-item"><h3>04</h3><p>Unidades</p></div>
+        <div class="stat-item"><h3>100%</h3><p>Completado</p></div>
+        <div class="stat-item"><h3>08</h3><p>Proyectos</p></div>
+    </section>
+
+    <section id="tecnologias" class="tech-section">
+        <h2>Tecnologías del Curso</h2>
+        <div class="tech-grid">
+            <div class="tech-card"><h3>SQL Server</h3><p>Modelamiento y consultas complejas.</p></div>
+            <div class="tech-card"><h3>Git & GitHub</h3><p>Control de versiones y despliegue.</p></div>
+            <div class="tech-card"><h3>Cloud Storage</h3><p>Gestión de archivos en la nube.</p></div>
         </div>
     </section>
 
-    <main class="container">
-        <!-- Cuadrícula 4x4 de semanas -->
+    <main id="proyectos" class="container">
+        <h2 class="section-title">Contenido Semanal (4x4)</h2>
         <div class="grid-proyectos" id="contenedor-visualizar"></div>
     </main>
+
+    <footer class="main-footer">
+        <p>© 2026 Base de Datos II. UPLA. | Estudiante: Tu Nombre</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
 
