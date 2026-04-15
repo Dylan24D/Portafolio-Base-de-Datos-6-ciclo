@@ -1,0 +1,55 @@
+/* Generales */
+body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #fff; color: #333; }
+.container { padding: 30px; max-width: 1300px; margin: auto; }
+
+/* Navbar */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 40px; background: #2c3e50; color: white;
+}
+.btn-auth { background: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+/* Hero */
+.hero { text-align: center; padding: 50px 20px; background: #fdfdfd; }
+.skills-container { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; }
+.skill-tag { background: #3498db; color: white; padding: 8px 18px; border-radius: 25px; font-size: 0.85rem; }
+
+/* CUADRÍCULA 4x4 */
+.grid-proyectos {
+    display: grid;
+    /* Esto fuerza 4 columnas en pantallas grandes */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+    padding-bottom: 50px;
+}
+
+/* Para pantallas pequeñas (celulares) bajamos a 1 columna */
+@media (max-width: 900px) { .grid-proyectos { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid-proyectos { grid-template-columns: 1fr; } }
+
+/* Tarjetas con Imagen */
+.card {
+    background: white; border-radius: 15px; overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #eee;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+
+.card-img {
+    width: 100%; height: 160px; background: #ecf0f1;
+    object-fit: cover; border-bottom: 1px solid #eee;
+}
+
+.card-body { padding: 20px; text-align: center; }
+.card-body h3 { margin: 0 0 10px 0; color: #2c3e50; }
+
+/* Botones */
+.btn-view { background: #3498db; color: white; width: 100%; border: none; padding: 10px; border-radius: 6px; cursor: pointer; }
+.btn-edit { background: #f1c40f; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; flex: 1; }
+.btn-delete { background: #e74c3c; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; flex: 1; }
+
+/* Admin Panel Box */
+.upload-box { 
+    background: white; padding: 30px; border-radius: 15px; 
+    border: 2px dashed #27ae60; margin-bottom: 40px; 
+}
